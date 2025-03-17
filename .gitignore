@@ -1,0 +1,52 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+*.db-shm
+*.db-wal
+*.json
+cache/
+
+# Environment variables
+.env
+.venv
+venv/
+ENV/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# macOS specific files
+.DS_Store
+
+# Redis dump file
+dump.rdb
+
+# Personal data and credentials
+*_credentials.py
+credentials.py
