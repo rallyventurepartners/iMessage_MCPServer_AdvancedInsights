@@ -50,3 +50,6 @@ dump.rdb
 # Personal data and credentials
 *_credentials.py
 credentials.py
+
+# Archived files
+OLD/
