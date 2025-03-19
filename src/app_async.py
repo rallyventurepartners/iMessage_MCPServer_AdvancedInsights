@@ -24,6 +24,20 @@ logger = logging.getLogger(__name__)
 # Create Quart app
 app = Quart(__name__)
 
+# Configure Flask/Quart settings for compatibility
+app.config.update({
+    "PROVIDE_AUTOMATIC_OPTIONS": True,
+    "DEBUG": True,
+    "SERVER_NAME": None,
+    "APPLICATION_ROOT": "/",
+    "PREFERRED_URL_SCHEME": "http",
+    "TRAP_HTTP_EXCEPTIONS": False,
+    "TRAP_BAD_REQUEST_ERRORS": False,
+    "PERMANENT_SESSION_LIFETIME": timedelta(days=31),
+    "sentiment_analysis": True,
+    "network_analysis": True
+})
+
 # Add rate limiting to prevent server overload
 limiter = RateLimiter(app)
 
@@ -32,10 +46,6 @@ db = None  # Will be initialized during startup
 
 # App configuration
 app.db_path = None  # Set by main_async.py
-app.config = {
-    'sentiment_analysis': True,
-    'network_analysis': True
-}
 
 # Startup event handler
 @app.before_serving

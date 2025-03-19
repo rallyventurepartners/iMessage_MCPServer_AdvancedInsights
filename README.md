@@ -148,25 +148,43 @@ To run the server:
 # Set the database path (optional)
 export DB_PATH=~/Library/Messages/chat.db
 
-# Run the server
-python main_async.py
+# Run the server with default settings
+python3 main_async.py
+
+# Or run with specific options (recommended for first-time users)
+python3 main_async.py --debug --port 5001
 ```
 
-The server will start on port 5000, accessing the default iMessage database.
+The server will start on port 5000 by default (or your specified port), accessing the iMessage database. The application provides a Redis-compatible in-memory cache, so Redis is not required to run the application.
 
 ### Command Line Options
 
 ```bash
-python main_async.py --help
+python3 main_async.py --help
 
 # Options include:
 # --host          # Host to bind to (default: 0.0.0.0)
 # --port          # Port to listen on (default: 5000)
 # --db-path       # Custom path to iMessage database
-# --debug         # Enable debug mode
-# --no-sentiment  # Disable sentiment analysis
-# --no-network    # Disable network analysis
+# --debug         # Enable debug mode with verbose logging
+# --no-sentiment  # Disable sentiment analysis for improved performance
+# --no-network    # Disable network analysis for improved performance
 ```
+
+### Troubleshooting
+
+If you encounter dependency issues:
+
+1. Make sure you're using Python 3.8 or higher
+2. Try reinstalling dependencies with latest versions:
+   ```bash
+   pip3 install --upgrade -r requirements.txt
+   ```
+3. If the server doesn't start due to port conflicts, use a different port:
+   ```bash
+   python3 main_async.py --port 5001
+   ```
+4. If Redis is not available, the system will automatically use in-memory caching
 
 ### API Endpoints
 

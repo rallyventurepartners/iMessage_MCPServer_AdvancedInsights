@@ -76,20 +76,15 @@ def main():
     from src.database.async_messages_db import AsyncMessagesDB
     db = AsyncMessagesDB(args.db_path)
     
-    # Optionally disable certain analysis features
-    config = {
-        'sentiment_analysis': not args.no_sentiment,
-        'network_analysis': not args.no_network,
-    }
-    
-    logger.info(f"Configuration: {config}")
-    
     # Import the app
     from src.app_async import app
     
     # Set the database path in the app
     app.db_path = args.db_path
-    app.config = config
+    app.config.update({
+        'sentiment_analysis': not args.no_sentiment,
+        'network_analysis': not args.no_network,
+    })
     
     # Run the server using hypercorn instead of uvicorn
     import hypercorn.asyncio
@@ -101,7 +96,12 @@ def main():
     
     # Start the server
     import asyncio
-    asyncio.run(hypercorn.asyncio.serve(app, config))
+    try:
+        asyncio.run(hypercorn.asyncio.serve(app, config))
+    except Exception as e:
+        logger.error(f"Server error: {e}")
+        logger.exception(e)
+        sys.exit(1)
 
 if __name__ == "__main__":
     try:
