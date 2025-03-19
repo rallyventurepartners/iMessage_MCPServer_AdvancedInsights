@@ -148,43 +148,25 @@ To run the server:
 # Set the database path (optional)
 export DB_PATH=~/Library/Messages/chat.db
 
-# Run the server with default settings
-python3 main_async.py
-
-# Or run with specific options (recommended for first-time users)
-python3 main_async.py --debug --port 5001
+# Run the server
+python main_async.py
 ```
 
-The server will start on port 5000 by default (or your specified port), accessing the iMessage database. The application provides a Redis-compatible in-memory cache, so Redis is not required to run the application.
+The server will start on port 5000, accessing the default iMessage database.
 
 ### Command Line Options
 
 ```bash
-python3 main_async.py --help
+python main_async.py --help
 
 # Options include:
 # --host          # Host to bind to (default: 0.0.0.0)
 # --port          # Port to listen on (default: 5000)
 # --db-path       # Custom path to iMessage database
-# --debug         # Enable debug mode with verbose logging
-# --no-sentiment  # Disable sentiment analysis for improved performance
-# --no-network    # Disable network analysis for improved performance
+# --debug         # Enable debug mode
+# --no-sentiment  # Disable sentiment analysis
+# --no-network    # Disable network analysis
 ```
-
-### Troubleshooting
-
-If you encounter dependency issues:
-
-1. Make sure you're using Python 3.8 or higher
-2. Try reinstalling dependencies with latest versions:
-   ```bash
-   pip3 install --upgrade -r requirements.txt
-   ```
-3. If the server doesn't start due to port conflicts, use a different port:
-   ```bash
-   python3 main_async.py --port 5001
-   ```
-4. If Redis is not available, the system will automatically use in-memory caching
 
 ### API Endpoints
 
@@ -277,14 +259,26 @@ The application uses Redis for high-performance caching but gracefully falls bac
 To run the server with all optimizations enabled:
 
 ```bash
-python main_async.py
+python3 main_async.py
 ```
 
 You can also customize the optimization parameters:
 
 ```bash
-python main_async.py --connection-pool-size 15 --cache-ttl 7200 --batch-size 1000
+python3 main_async.py --connection-pool-size 15 --cache-ttl 7200 --batch-size 1000
 ```
+
+## Claude Desktop Integration
+
+The iMessage Advanced Insights server now includes integration with Claude Desktop, allowing you to analyze your messages using Claude's AI capabilities.
+
+To set up Claude Desktop integration:
+
+1. Run the server: `python3 main_async.py --port 5001`
+2. Generate the Claude configuration: `python3 generate_claude_config.py`
+3. Import the configuration into Claude Desktop
+
+See [CLAUDE_DESKTOP_INTEGRATION.md](CLAUDE_DESKTOP_INTEGRATION.md) for detailed instructions.
 
 ## Privacy Notice
 
