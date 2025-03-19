@@ -270,13 +270,19 @@ python3 main_async.py --connection-pool-size 15 --cache-ttl 7200 --batch-size 10
 
 ## Claude Desktop Integration
 
-The iMessage Advanced Insights server now includes integration with Claude Desktop, allowing you to analyze your messages using Claude's AI capabilities.
+The iMessage Advanced Insights server now integrates with Claude Desktop as an MCP Server, allowing you to analyze your messages using Claude's AI capabilities directly.
 
 To set up Claude Desktop integration:
 
-1. Run the server: `python3 main_async.py --port 5001`
-2. Generate the Claude configuration: `python3 generate_claude_config.py`
-3. Import the configuration into Claude Desktop
+1. Generate the Claude configuration: `python3 generate_claude_config.py`
+2. Import the configuration into Claude Desktop's Advanced settings
+3. Enable the "iMessage Advanced Insights" MCP server in Claude Desktop
+
+Claude will automatically start the server when needed and shut it down when not in use. You can then ask Claude questions about your iMessage data, such as:
+
+- "Who do I message with most frequently?"
+- "What's the sentiment analysis of my conversations with [contact]?"
+- "Show me my messaging patterns over time"
 
 See [CLAUDE_DESKTOP_INTEGRATION.md](CLAUDE_DESKTOP_INTEGRATION.md) for detailed instructions.
 
