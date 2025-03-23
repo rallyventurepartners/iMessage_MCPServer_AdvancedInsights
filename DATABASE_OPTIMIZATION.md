@@ -250,6 +250,37 @@ The system maintains cache consistency through:
 - Explicit invalidation methods for manual control
 - Early refresh to prevent cache stampedes
 
+## Installation and Optimization
+
+### Quick Start with Auto-Indexing
+
+The fastest way to get started with an optimized database is to use the installation script:
+
+```bash
+# Install, optimize, and configure in one step
+python install_and_optimize.py
+```
+
+This script will:
+1. Install all dependencies
+2. Create an optimized indexed copy of your database
+3. Set up a startup script for easy launching
+4. Configure Claude Desktop integration
+
+### Auto-Indexing During Server Startup
+
+The server can automatically check for and create an indexed database:
+
+```bash
+# Start the server with auto-indexing enabled
+python mcp_server_modular.py --auto-index
+```
+
+This will:
+1. Check if the database is properly indexed
+2. If not, create an optimized indexed copy
+3. Automatically switch to using the indexed copy
+
 ## Practical Performance Tips
 
 ### 1. Use an Indexed Copy
@@ -261,7 +292,7 @@ python index_imessage_db.py --read-only
 
 Then use the indexed copy for your queries:
 ```bash
-python mcp_server_compatible.py --db-path ~/.imessage_insights/indexed_chat.db
+python mcp_server_modular.py --db-path ~/.imessage_insights/indexed_chat.db
 ```
 
 ### 2. Enable Full-Text Search
@@ -295,7 +326,22 @@ monitor = monitor_memory(warning_threshold=70, critical_threshold=85)
 memory_stats = monitor.get_stats()
 ```
 
-### 5. Consider Sharding for Very Large Databases
+### 5. Check Indexing Status
+
+You can check the indexing status of your database through the health endpoint:
+
+```bash
+curl http://localhost:5000/api/health | jq '.components.database.details'
+```
+
+This will show:
+- Whether the database is indexed
+- Whether FTS is enabled
+- Database size and location
+- Materialized views status
+- Recommendations if not optimized
+
+### 6. Consider Sharding for Very Large Databases
 
 For extremely large databases (10GB+), consider implementing time-based sharding:
 - Create separate indexed databases for different time periods
