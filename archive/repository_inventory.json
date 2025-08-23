@@ -1,0 +1,304 @@
+{
+  "repository": "iMessage_MCPServer_AdvancedInsights",
+  "scan_date": "2025-01-19",
+  "summary": {
+    "total_files": 117,
+    "python_files": 77,
+    "documentation_files": 25,
+    "configuration_files": 5,
+    "test_files": 2,
+    "largest_file": {
+      "path": "./src/database/async_messages_db_new.py",
+      "size_bytes": 65439,
+      "type": "python"
+    },
+    "total_size_bytes": 1454891,
+    "deprecated_files_count": 12,
+    "unused_files_count": 8,
+    "quality_issues_count": 15
+  },
+  
+  "file_inventory": {
+    "documentation": {
+      "root_level": [
+        {"path": "./README.md", "size": 9838, "last_modified": "2024-12-23", "status": "active"},
+        {"path": "./README_MCP.md", "size": 5591, "last_modified": "2025-01-20", "status": "active"},
+        {"path": "./CLAUDE.md", "size": 6832, "last_modified": "2024-12-23", "status": "active"},
+        {"path": "./CHANGELOG.md", "size": 1891, "last_modified": "2024-12-23", "status": "active"},
+        {"path": "./SETUP_GUIDE.md", "size": 5964, "last_modified": "2025-01-20", "status": "active"},
+        {"path": "./PRIVACY_SECURITY.md", "size": 6386, "last_modified": "2025-01-20", "status": "active"},
+        {"path": "./MCP_TOOLS_QUICK_REFERENCE.md", "size": 3198, "last_modified": "2024-12-23", "status": "active"},
+        {"path": "./MCP_TOOLS_REFERENCE.md", "size": 13781, "last_modified": "2025-01-20", "status": "active"},
+        {"path": "./MIGRATION_GUIDE.md", "size": 5072, "last_modified": "2025-01-20", "status": "active"},
+        {"path": "./CLAUDE_DESKTOP_TESTING.md", "size": 6649, "last_modified": "2025-01-20", "status": "active"},
+        {"path": "./AUDIT_REPORT.md", "size": 6546, "last_modified": "2025-01-20", "status": "stale"},
+        {"path": "./AUDIT_VALIDATION_REPORT.md", "size": 5024, "last_modified": "2025-01-20", "status": "stale"},
+        {"path": "./FEATURE_AUDIT_REPORT.md", "size": 13688, "last_modified": "2025-01-20", "status": "stale"},
+        {"path": "./IMPLEMENTATION_SUMMARY.md", "size": 5336, "last_modified": "2025-01-20", "status": "stale"},
+        {"path": "./ENRICHMENTS_SUMMARY.md", "size": 4947, "last_modified": "2025-01-20", "status": "stale"},
+        {"path": "./ENRICHMENT_QUICK_WINS.md", "size": 11623, "last_modified": "2025-01-20", "status": "stale"},
+        {"path": "./NEW_TOOLS_IMPLEMENTATION_SPEC.md", "size": 15017, "last_modified": "2025-01-20", "status": "stale"}
+      ],
+      "docs_folder": [
+        {"path": "./docs/USER_GUIDE.md", "size": 9287, "last_modified": "2024-12-14", "status": "active"},
+        {"path": "./docs/DEVELOPER_GUIDE.md", "size": 15171, "last_modified": "2024-12-14", "status": "active"},
+        {"path": "./docs/CONTRIBUTING.md", "size": 8910, "last_modified": "2024-12-09", "status": "active"},
+        {"path": "./docs/MCP_TOOLS_GUIDE.md", "size": 10469, "last_modified": "2024-12-23", "status": "active"},
+        {"path": "./docs/CLAUDE_DESKTOP_INTEGRATION.md", "size": 4191, "last_modified": "2024-12-14", "status": "active"},
+        {"path": "./docs/CLAUDE_INTERACTION_EXAMPLES.md", "size": 11708, "last_modified": "2024-12-23", "status": "active"},
+        {"path": "./docs/LLM_INTEGRATION.md", "size": 6858, "last_modified": "2024-12-23", "status": "active"},
+        {"path": "./docs/db_implementation_sample.py", "size": 52327, "last_modified": "2024-12-23", "status": "deprecated", "reason": "Sample file in docs folder"}
+      ]
+    },
+    
+    "source_code": {
+      "server_files": [
+        {"path": "./server.py", "size": 5018, "last_modified": "2024-12-14", "status": "deprecated", "reason": "Old server entry point, replaced by mcp_server/main.py"},
+        {"path": "./mcp_server/main.py", "size": 48607, "last_modified": "2025-01-20", "status": "active", "note": "Primary MCP server implementation"}
+      ],
+      
+      "mcp_server_module": [
+        {"path": "./mcp_server/__init__.py", "size": 133, "last_modified": "2025-01-20", "status": "active"},
+        {"path": "./mcp_server/config.py", "size": 5425, "last_modified": "2025-01-20", "status": "active"},
+        {"path": "./mcp_server/consent.py", "size": 6045, "last_modified": "2025-01-20", "status": "active"},
+        {"path": "./mcp_server/db.py", "size": 10375, "last_modified": "2025-01-20", "status": "active"},
+        {"path": "./mcp_server/models.py", "size": 11254, "last_modified": "2025-01-20", "status": "active"},
+        {"path": "./mcp_server/privacy.py", "size": 7865, "last_modified": "2025-01-20", "status": "active"}
+      ],
+      
+      "mcp_server_tools": [
+        {"path": "./mcp_server/tools/__init__.py", "size": 1236, "last_modified": "2025-01-20", "status": "deprecated", "reason": "Not used, tools are in mcp_server/main.py"},
+        {"path": "./mcp_server/tools/analytics.py", "size": 20728, "last_modified": "2025-01-20", "status": "deprecated", "reason": "Not imported"},
+        {"path": "./mcp_server/tools/health.py", "size": 3923, "last_modified": "2025-01-20", "status": "deprecated", "reason": "Not imported"},
+        {"path": "./mcp_server/tools/messages.py", "size": 3783, "last_modified": "2025-01-20", "status": "deprecated", "reason": "Not imported"},
+        {"path": "./mcp_server/tools/network.py", "size": 6471, "last_modified": "2025-01-20", "status": "deprecated", "reason": "Not imported"},
+        {"path": "./mcp_server/tools/overview.py", "size": 8755, "last_modified": "2025-01-20", "status": "deprecated", "reason": "Not imported"},
+        {"path": "./mcp_server/tools/predictions.py", "size": 10422, "last_modified": "2025-01-20", "status": "deprecated", "reason": "Not imported"}
+      ],
+      
+      "src_database": [
+        {"path": "./src/database/__init__.py", "size": 209, "last_modified": "2024-12-23", "status": "active"},
+        {"path": "./src/database/async_messages_db_implementations.py", "size": 14146, "last_modified": "2024-12-23", "status": "deprecated", "reason": "Old implementation"},
+        {"path": "./src/database/async_messages_db_new.py", "size": 65439, "last_modified": "2024-12-23", "status": "active", "note": "Primary database implementation"},
+        {"path": "./src/database/db_base.py", "size": 7708, "last_modified": "2024-12-14", "status": "active"},
+        {"path": "./src/database/db_factory.py", "size": 8034, "last_modified": "2024-12-14", "status": "active"},
+        {"path": "./src/database/db_utils.py", "size": 10682, "last_modified": "2024-12-14", "status": "active"},
+        {"path": "./src/database/get_database.py", "size": 9176, "last_modified": "2024-12-14", "status": "deprecated", "reason": "Functionality in mcp_server/db.py"},
+        {"path": "./src/database/large_db_handler.py", "size": 46318, "last_modified": "2024-12-09", "status": "active"},
+        {"path": "./src/database/sharded_async_messages_db.py", "size": 36478, "last_modified": "2024-12-23", "status": "active"}
+      ],
+      
+      "src_mcp_tools": [
+        {"path": "./src/mcp_tools/__init__.py", "size": 636, "last_modified": "2024-12-14", "status": "unused"},
+        {"path": "./src/mcp_tools/attachments.py", "size": 12960, "last_modified": "2024-12-23", "status": "unused"},
+        {"path": "./src/mcp_tools/communication_style.py", "size": 48871, "last_modified": "2024-12-23", "status": "unused"},
+        {"path": "./src/mcp_tools/consent.py", "size": 7670, "last_modified": "2024-12-14", "status": "unused"},
+        {"path": "./src/mcp_tools/contacts.py", "size": 14367, "last_modified": "2024-12-23", "status": "unused"},
+        {"path": "./src/mcp_tools/conversation_intelligence.py", "size": 20698, "last_modified": "2024-12-23", "status": "unused"},
+        {"path": "./src/mcp_tools/emoji_analysis.py", "size": 21960, "last_modified": "2024-12-23", "status": "unused"},
+        {"path": "./src/mcp_tools/group_chats.py", "size": 20130, "last_modified": "2024-12-23", "status": "unused"},
+        {"path": "./src/mcp_tools/life_events.py", "size": 43594, "last_modified": "2024-12-23", "status": "unused"},
+        {"path": "./src/mcp_tools/messages.py", "size": 30773, "last_modified": "2024-12-23", "status": "unused"},
+        {"path": "./src/mcp_tools/network.py", "size": 1461, "last_modified": "2024-12-09", "status": "unused"},
+        {"path": "./src/mcp_tools/network_intelligence.py", "size": 44351, "last_modified": "2024-12-23", "status": "unused"},
+        {"path": "./src/mcp_tools/predictive_analytics.py", "size": 32390, "last_modified": "2024-12-23", "status": "unused"},
+        {"path": "./src/mcp_tools/registry.py", "size": 8568, "last_modified": "2024-12-14", "status": "unused"},
+        {"path": "./src/mcp_tools/report_generation.py", "size": 40296, "last_modified": "2024-12-23", "status": "unused"},
+        {"path": "./src/mcp_tools/sentiment.py", "size": 16166, "last_modified": "2024-12-23", "status": "unused"},
+        {"path": "./src/mcp_tools/templates.py", "size": 5538, "last_modified": "2024-12-09", "status": "unused"},
+        {"path": "./src/mcp_tools/topic_analysis.py", "size": 24044, "last_modified": "2024-12-14", "status": "unused"},
+        {"path": "./src/mcp_tools/visualization.py", "size": 18384, "last_modified": "2024-12-14", "status": "unused"}
+      ],
+      
+      "src_utils": [
+        {"path": "./src/utils/__init__.py", "size": 1286, "last_modified": "2024-12-23", "status": "active"},
+        {"path": "./src/utils/analysis_cache.py", "size": 8219, "last_modified": "2024-12-23", "status": "active"},
+        {"path": "./src/utils/async_query_processor.py", "size": 13936, "last_modified": "2024-12-09", "status": "active"},
+        {"path": "./src/utils/concurrency.py", "size": 18070, "last_modified": "2024-12-14", "status": "active"},
+        {"path": "./src/utils/config.py", "size": 11745, "last_modified": "2024-12-14", "status": "deprecated", "reason": "Functionality in mcp_server/config.py"},
+        {"path": "./src/utils/consent_manager.py", "size": 10230, "last_modified": "2024-12-14", "status": "deprecated", "reason": "Functionality in mcp_server/consent.py"},
+        {"path": "./src/utils/contact_resolver.py", "size": 10095, "last_modified": "2024-12-23", "status": "active"},
+        {"path": "./src/utils/decorators.py", "size": 11025, "last_modified": "2024-12-23", "status": "active"},
+        {"path": "./src/utils/llm_integration.py", "size": 25690, "last_modified": "2024-12-23", "status": "active"},
+        {"path": "./src/utils/logging_config.py", "size": 5406, "last_modified": "2024-12-14", "status": "active"},
+        {"path": "./src/utils/memory_monitor.py", "size": 12724, "last_modified": "2024-12-14", "status": "active"},
+        {"path": "./src/utils/message_formatter.py", "size": 6060, "last_modified": "2024-12-14", "status": "active"},
+        {"path": "./src/utils/query_cache.py", "size": 8938, "last_modified": "2024-12-14", "status": "active"},
+        {"path": "./src/utils/responses.py", "size": 4804, "last_modified": "2024-12-23", "status": "active"},
+        {"path": "./src/utils/sanitization.py", "size": 9032, "last_modified": "2024-12-23", "status": "active"},
+        {"path": "./src/utils/topic_analyzer.py", "size": 13151, "last_modified": "2024-12-14", "status": "active"}
+      ],
+      
+      "src_server": [
+        {"path": "./src/server/__init__.py", "size": 242, "last_modified": "2024-12-14", "status": "active"},
+        {"path": "./src/server/server.py", "size": 12543, "last_modified": "2024-12-23", "status": "deprecated", "reason": "Old server implementation"}
+      ]
+    },
+    
+    "configuration": [
+      {"path": "./claude_desktop_config.json", "size": 1769, "last_modified": "2024-11-22", "status": "active"},
+      {"path": "./claude_desktop_config_validated.json", "size": 671, "last_modified": "2024-12-23", "status": "active"},
+      {"path": "./config.sample.json", "size": 1548, "last_modified": "2024-12-14", "status": "active"},
+      {"path": "./.claude/settings.local.json", "size": 112, "last_modified": "2025-01-20", "status": "active"},
+      {"path": "./benchmark_results.json", "size": 1763, "last_modified": "2025-01-20", "status": "active"}
+    ],
+    
+    "scripts": [
+      {"path": "./scripts/add_performance_indexes.py", "size": 7220, "last_modified": "2024-12-23", "status": "active"},
+      {"path": "./scripts/basic_performance_test.py", "size": 18925, "last_modified": "2024-12-14", "status": "active"},
+      {"path": "./scripts/benchmark_mcp.py", "size": 10844, "last_modified": "2025-01-20", "status": "active"},
+      {"path": "./scripts/check_database_permissions.py", "size": 7100, "last_modified": "2024-12-14", "status": "active"},
+      {"path": "./scripts/database_benchmark.py", "size": 17912, "last_modified": "2024-12-09", "status": "active"},
+      {"path": "./scripts/index_imessage_db.py", "size": 15667, "last_modified": "2024-12-09", "status": "active"},
+      {"path": "./scripts/install_and_optimize.py", "size": 9285, "last_modified": "2024-12-09", "status": "active"},
+      {"path": "./scripts/install_mcp.py", "size": 17701, "last_modified": "2024-12-09", "status": "active"},
+      {"path": "./scripts/performance_testing.py", "size": 23101, "last_modified": "2024-12-14", "status": "active"},
+      {"path": "./scripts/shard_dashboard.py", "size": 32899, "last_modified": "2024-12-09", "status": "active"},
+      {"path": "./scripts/shard_large_database.py", "size": 9547, "last_modified": "2024-12-09", "status": "active"},
+      {"path": "./scripts/update_claude_config.py", "size": 7524, "last_modified": "2024-12-09", "status": "active"}
+    ],
+    
+    "tests": [
+      {"path": "./tests/test_core_functionality.py", "size": 18957, "last_modified": "2025-01-20", "status": "active"},
+      {"path": "./tests/test_integration.py", "size": 11918, "last_modified": "2025-01-20", "status": "active"}
+    ]
+  },
+  
+  "issues": {
+    "deprecated_files": [
+      {
+        "category": "Duplicate functionality",
+        "files": [
+          "./server.py - Old entry point, replaced by mcp_server/main.py",
+          "./src/server/server.py - Old server implementation",
+          "./src/database/async_messages_db_implementations.py - Old database implementation",
+          "./src/database/get_database.py - Functionality moved to mcp_server/db.py",
+          "./src/utils/config.py - Functionality in mcp_server/config.py",
+          "./src/utils/consent_manager.py - Functionality in mcp_server/consent.py"
+        ]
+      },
+      {
+        "category": "Unused tool modules",
+        "files": [
+          "./mcp_server/tools/*.py - All tool files unused, tools implemented in main.py instead"
+        ]
+      },
+      {
+        "category": "Documentation artifacts",
+        "files": [
+          "./docs/db_implementation_sample.py - Sample code in docs folder"
+        ]
+      }
+    ],
+    
+    "unused_directories": [
+      {
+        "path": "./src/mcp_tools/",
+        "reason": "Entire directory of 19 tool files (400KB+) not imported anywhere",
+        "recommendation": "Delete or integrate these advanced tools into mcp_server/main.py"
+      },
+      {
+        "path": "./mcp_server/tools/",
+        "reason": "Tool files not imported, functionality in main.py",
+        "recommendation": "Delete directory to avoid confusion"
+      }
+    ],
+    
+    "code_quality_issues": [
+      {
+        "type": "Tool schema mismatch",
+        "description": "MCP tools in main.py use @mcp.tool() decorator but don't have explicit schemas",
+        "files": ["./mcp_server/main.py"],
+        "recommendation": "Add explicit parameter schemas for type safety"
+      },
+      {
+        "type": "Import organization",
+        "description": "Some files have unused imports or mixed import styles",
+        "files": ["./mcp_server/main.py", "./src/database/async_messages_db_new.py"],
+        "recommendation": "Run isort and remove unused imports"
+      },
+      {
+        "type": "Large file",
+        "description": "Files over 40KB should be split for maintainability",
+        "files": [
+          "./mcp_server/main.py (48KB)",
+          "./src/database/async_messages_db_new.py (65KB)",
+          "./docs/db_implementation_sample.py (52KB)"
+        ],
+        "recommendation": "Refactor into smaller modules"
+      }
+    ],
+    
+    "documentation_gaps": [
+      {
+        "type": "Stale audit reports",
+        "files": [
+          "./AUDIT_REPORT.md",
+          "./AUDIT_VALIDATION_REPORT.md",
+          "./FEATURE_AUDIT_REPORT.md",
+          "./IMPLEMENTATION_SUMMARY.md",
+          "./ENRICHMENTS_SUMMARY.md",
+          "./ENRICHMENT_QUICK_WINS.md",
+          "./NEW_TOOLS_IMPLEMENTATION_SPEC.md"
+        ],
+        "recommendation": "Archive or update these implementation planning documents"
+      },
+      {
+        "type": "Missing API documentation",
+        "description": "No comprehensive API reference for MCP tools",
+        "recommendation": "Generate API docs from tool docstrings"
+      }
+    ],
+    
+    "structure_issues": [
+      {
+        "type": "Dual structure confusion",
+        "description": "Both src/ and mcp_server/ directories exist with overlapping functionality",
+        "recommendation": "Consolidate into single structure, preferably mcp_server/"
+      },
+      {
+        "type": "Multiple virtual environments",
+        "description": "Found test_venv/, venv/, and .venv/ directories",
+        "recommendation": "Use single venv/ and add others to .gitignore"
+      }
+    ]
+  },
+  
+  "recommendations": {
+    "immediate_actions": [
+      "Delete unused src/mcp_tools/ directory (saves 400KB+)",
+      "Delete mcp_server/tools/ directory since tools are in main.py",
+      "Remove deprecated files: server.py, src/server/server.py",
+      "Archive stale audit/implementation documents to docs/archive/"
+    ],
+    
+    "refactoring_suggestions": [
+      "Split mcp_server/main.py (48KB) into smaller modules",
+      "Extract tool implementations from main.py to separate files",
+      "Consolidate database implementations",
+      "Merge src/utils/ functionality into mcp_server/ structure"
+    ],
+    
+    "documentation_updates": [
+      "Update README.md to reflect current structure",
+      "Create API reference from tool docstrings",
+      "Update CLAUDE.md with current tool list",
+      "Archive planning documents that are no longer relevant"
+    ],
+    
+    "code_quality_improvements": [
+      "Add type hints and schemas to all MCP tools",
+      "Run linters (black, isort, flake8) on all Python files",
+      "Add __all__ exports to __init__.py files",
+      "Remove unused imports across codebase"
+    ]
+  },
+  
+  "metrics": {
+    "total_unused_code_size": "~500KB",
+    "deprecated_files_size": "~150KB",
+    "potential_space_savings": "~650KB (45% of codebase)",
+    "documentation_to_code_ratio": "1:3",
+    "test_coverage_files": "2 test files for 77 source files"
+  }
+}

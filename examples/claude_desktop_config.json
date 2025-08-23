@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "imessage-insights": {
+      "command": "python",
+      "args": ["-m", "imessage_mcp_server.main"],
+      "env": {
+        "MCP_DB_PATH": "/Users/YOUR_USERNAME/Library/Messages/chat.db",
+        "MCP_USE_SHARDS": "false",
+        "MCP_MEMORY_LIMIT_MB": "2048",
+        "MCP_DISABLE_MEMORY_MONITOR": "false"
+      }
+    }
+  }
+}

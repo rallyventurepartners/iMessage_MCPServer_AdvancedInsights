@@ -1,0 +1,39 @@
+# iMessage MCP Server Requirements
+# Using official Anthropic MCP SDK
+
+# Core MCP SDK
+mcp>=1.0.0  # Anthropic Model Context Protocol SDK
+
+# Database
+aiosqlite>=0.19.0
+
+# Data validation
+pydantic>=2.0.0
+
+# Async utilities
+asyncio>=3.4.3
+
+# Privacy & Security
+blake3>=0.3.0  # For hashing (alternative to built-in blake2b)
+
+# Analytics (deterministic only by default)
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Optional ML features (disabled by default)
+# Uncomment if USE_TRANSFORMER_NLP is enabled
+# transformers>=4.30.0
+# torch>=2.0.0
+# scikit-learn>=1.3.0
+
+# Development dependencies
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+mypy>=1.5.0
+black>=23.0.0
+ruff>=0.1.0
+isort>=5.12.0
+
+# Performance monitoring
+psutil>=5.9.0
+memory-profiler>=0.61.0
